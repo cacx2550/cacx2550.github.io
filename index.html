@@ -3,49 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TVET Power Notes - Unlocking Infinite Possibilities by Cacx" />
+  <meta name="description" content="TVET Power Notes by Cacx" />
   <title>TVET Power Note's by Cacx</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
+    :root {
+      --bg-color: #f0f4ff;
+      --text-color: #000;
+      --header-bg: linear-gradient(to right, #004aad, #00bfff);
+      --link-bg: #e7f0ff;
+      --link-color: #004aad;
+      --footer-bg: #f1f1f1;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --header-bg: linear-gradient(to right, #0d0d0d, #1a1a1a);
+      --link-bg: #2a2a2a;
+      --link-color: #00d4ff;
+      --footer-bg: #1c1c1c;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
+      background: var(--bg-color);
+      color: var(--text-color);
       margin: 0;
       padding: 0;
     }
+
     .header {
-      background: linear-gradient(to right, #004aad, #007bff);
+      background: var(--header-bg);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
+      border-bottom: 4px solid #00307a;
     }
+
+    .toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
     .section-title {
       margin-top: 2rem;
       font-weight: bold;
       border-bottom: 2px solid #004aad;
       padding-bottom: 0.5rem;
+      font-size: 1.4rem;
     }
+
     .file-link {
-      margin-bottom: 0.75rem;
       display: block;
+      background: var(--link-bg);
+      border-left: 5px solid var(--link-color);
+      margin: 10px 0;
+      padding: 10px;
+      text-decoration: none;
+      color: var(--link-color);
+      font-weight: 500;
+      border-radius: 5px;
+      transition: 0.3s ease;
     }
+
+    .file-link:hover {
+      background: #d0e5ff;
+      transform: scale(1.02);
+    }
+
     footer {
-      background: #e0e0e0;
-      padding: 1rem;
+      background: var(--footer-bg);
       text-align: center;
+      padding: 1rem;
       margin-top: 3rem;
       font-size: 0.9rem;
-    }
-    a {
-      color: #004aad;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      color: #666;
     }
   </style>
 </head>
 <body>
+  <button class="toggle-btn" onclick="toggleMode()">🌓 Dark Mode</button>
+
   <div class="header">
     <h1>📘 TVET Power Note's</h1>
     <p>Unlocking Infinite Possibilities — Powered by <strong>Cacx</strong></p>
@@ -53,22 +104,23 @@
 
   <div class="container">
     <h2 class="section-title">📚 Simplified Notes</h2>
-    <div id="notes-list">
-      <a class="file-link" href="notes/Grade3-EWM.pdf" download>📄 Grade 3 Notes (EWM)</a>
-      <!-- You can add more note links here -->
-    </div>
+    <a class="file-link" href="notes/Grade3-EWM.pdf" download>📄 Grade 3 Notes (EWM)</a>
 
     <h2 class="section-title">📝 Past Papers</h2>
-    <div id="pastpapers-list">
-      <p>Coming soon!</p>
-      <!-- Add past papers like this:
-      <a class="file-link" href="past-papers/term1-2024.pdf" download>📄 2024 Term 1 Electrical Paper</a>
-      -->
-    </div>
+    <p>Coming soon!</p>
+
+    <h2 class="section-title">📞 Contact Me</h2>
+    <a class="file-link" href="https://wa.me/254799237950" target="_blank">💬 WhatsApp: 0799 237 950</a>
   </div>
 
   <footer>
-    &copy; 2025 TVET Power Note's. Built with 💡 by <strong>Cacx</strong> | kim721263@gmail.com
+    &copy; 2025 TVET Power Note's | Built with 💡 by <strong>Cacx</strong>
   </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
